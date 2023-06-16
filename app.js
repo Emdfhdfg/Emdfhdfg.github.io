@@ -3,6 +3,7 @@ tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 
+
 let items = [
   {    
     id: "1",
@@ -173,4 +174,11 @@ window.addEventListener("DOMContentLoaded", () => {
   updateCartCounter();
 });
 
-
+let btnCheckout = document.getElementById("btn-checkout");
+let data = {
+  totalPrice: totalPrice
+}
+btnCheckout.addEventListener("click", () => {
+  tg.sendData(JSON.stringify(data));
+  tg.close();
+});
