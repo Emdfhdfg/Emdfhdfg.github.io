@@ -173,5 +173,3 @@ items.forEach((item, index) => {
 window.addEventListener("DOMContentLoaded", () => {
   updateCartCounter();
 });
-
-
