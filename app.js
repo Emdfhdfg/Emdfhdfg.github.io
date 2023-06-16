@@ -136,9 +136,9 @@ function updateCart() {
 
     cartItemsElement.appendChild(itemElement);
   });
-
+  const totalPrice = calculateTotal(cartItems);
   const cartTotal = document.getElementById("cart-total");
-  cartTotal.textContent = "Итого: " + calculateTotal(cartItems) + "₽";
+  cartTotal.textContent = "Итого: " + totalPrice + "₽";
 
   if (cartItems.length > 0) {
     document.getElementById("cart-container").style.display = "block";
@@ -146,7 +146,6 @@ function updateCart() {
     document.getElementById("cart-container").style.display = "none";
   }
 }
-
 function calculateTotal(cartItems) {
   let total = 0;
   cartItems.forEach(function (item) {
@@ -173,3 +172,5 @@ items.forEach((item, index) => {
 window.addEventListener("DOMContentLoaded", () => {
   updateCartCounter();
 });
+
+
